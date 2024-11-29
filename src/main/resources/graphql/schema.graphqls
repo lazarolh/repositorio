@@ -1,0 +1,32 @@
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Query 
+{
+    getAll:[Category]
+    getById(id:Int):Category
+    #getAll:[Supplier]
+    #getById(id:Int):Supplier
+
+}
+type Mutation {
+    register(categoria:CategoryDTO):Category
+    update(categoria:CategoryDTO, id:Int):Category
+    delete(id: Int): Boolean
+    # delete(categoria=:CategoryDTO):Category
+}
+
+type Category { 
+id:ID!
+name:String 
+}
+
+input CategoryDTO {
+id:ID!
+name:String 
+}
+
+
+
